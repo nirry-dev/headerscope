@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "headerscope"
+version = "0.1.0"
+description = "Audit a site's HTTP security headers — HSTS, CSP, X-Frame-Options and the rest — with a letter grade and the fix for each gap. Pure standard library."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Nirry", email = "labs@nirry.net" }]
+keywords = [
+    "http",
+    "security-headers",
+    "csp",
+    "hsts",
+    "web-security",
+    "recon",
+    "audit",
+    "scanner",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Internet :: WWW/HTTP",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://nirry.net"
+Source = "https://github.com/nirry-dev/headerscope"
+Issues = "https://github.com/nirry-dev/headerscope/issues"
+
+[project.scripts]
+headerscope = "headerscope.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["headerscope"]
+
+[tool.hatch.build.targets.sdist]
+include = ["headerscope", "tests", "README.md", "LICENSE", "CHANGELOG.md"]
